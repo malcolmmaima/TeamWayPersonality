@@ -1,8 +1,8 @@
 package com.malcolmmaima.teamwaypersonality.di
 
 import android.content.Context
-import androidx.viewbinding.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.malcolmmaima.teamwaypersonality.BuildConfig
 import com.malcolmmaima.teamwaypersonality.data.datastore.AppDatasource
 import com.malcolmmaima.teamwaypersonality.network.MalcolmApi
 import com.malcolmmaima.teamwaypersonality.utils.Constants.BASE_URL
