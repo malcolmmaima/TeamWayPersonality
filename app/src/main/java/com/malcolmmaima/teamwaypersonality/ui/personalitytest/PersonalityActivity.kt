@@ -136,7 +136,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
     }
 
     override fun onCardDragging(direction: Direction?, ratio: Float) {
-        
+
     }
 
     override fun onCardSwiped(direction: Direction?) {
@@ -191,6 +191,11 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
             // change image of id android:id="@+id/imageView" to the personality type
             binding.imageView.visibility = View.VISIBLE
             binding.placeholderText.visibility = View.VISIBLE
+
+            if(selectedOptions.size == 0) {
+                binding.imageView.visibility = View.GONE
+                binding.placeholderText.text = getString(R.string.retry_text)
+            }
             when (personalityType) {
                 "Introvert" -> {
                     binding.imageView.setImageResource(R.drawable.introvert)
