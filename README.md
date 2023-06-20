@@ -47,6 +47,7 @@ The project utilizes the following libraries and dependencies:
 
 # Usage
 The app allows users to take a personality assessment and receive personalized results. The user interface is designed to provide a smooth and intuitive experience. Users can swipe through a stack of cards, answer questions, and view their personality profile.
+The app uses a mock backend found here: https://malcolmmaima.com/personality/questions.json
 
 # Development
 - The project follows modern Android development practices, including the MVVM (Model-View-ViewModel) architecture pattern. 
