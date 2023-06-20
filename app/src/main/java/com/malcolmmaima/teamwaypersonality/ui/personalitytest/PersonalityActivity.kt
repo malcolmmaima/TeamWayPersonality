@@ -80,10 +80,6 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
             if (layoutManager.topPosition != 0) {
                 binding.cards.smoothScrollToPosition(0)
 
-                // Reset the counts
-                introvertCount = 0
-                extrovertCount = 0
-
                 // Refetch the questions
                 fetchPersonalityQuestions()
             }
@@ -96,12 +92,16 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
 
         binding.container.setOnTouchListener(object : OnSwipeTouchListener(this@PersonalityActivity) {
             override fun onSwipeDown() {
-                binding.cards.rewind()
+                fetchPersonalityQuestions()
             }
         })
     }
 
     private fun fetchPersonalityQuestions() {
+        // Reset the counts
+        introvertCount = 0
+        extrovertCount = 0
+
         binding.imageView.visibility = View.GONE
         binding.placeholderText.visibility = View.GONE
 
@@ -136,7 +136,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
     }
 
     override fun onCardDragging(direction: Direction?, ratio: Float) {
-
+        
     }
 
     override fun onCardSwiped(direction: Direction?) {
@@ -185,7 +185,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
             val personalityType = when {
                 introvertCount > extrovertCount -> "Introvert"
                 extrovertCount > introvertCount -> "Extrovert"
-                else -> "Ambivert"
+                else -> "None"
             }
 
             // change image of id android:id="@+id/imageView" to the personality type
@@ -202,7 +202,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
                 }
                 else -> {
                     binding.imageView.visibility = View.GONE
-                    binding.placeholderText.text = getString(R.string.ambivert_text)
+                    binding.placeholderText.text = getString(R.string.retry_text)
                 }
             }
         }
