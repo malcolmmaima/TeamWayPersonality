@@ -15,6 +15,7 @@ import com.malcolmmaima.teamwaypersonality.databinding.ActivityMainBinding
 import com.malcolmmaima.teamwaypersonality.ui.personalitytest.adapter.CardAdapter
 import com.malcolmmaima.teamwaypersonality.utils.OnSwipeTouchListener
 import com.malcolmmaima.teamwaypersonality.utils.calculatePercentage
+import com.malcolmmaima.teamwaypersonality.utils.snackbar
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
@@ -109,6 +110,16 @@ class MainActivity : AppCompatActivity(), CardStackListener {
                     // Update the UI.
                     initializeCardStackView(personalityQuestions.questions)
                 }
+            }
+        }
+
+        // observer for error
+        viewModel.errorMessage.observe(this) { errorMessage ->
+            if (errorMessage != null) {
+                binding.imageView.visibility = View.GONE
+                binding.placeholderText.visibility = View.GONE
+                binding.placeholderText.text = getString(R.string.error_message)
+                binding.root.snackbar(errorMessage)
             }
         }
     }

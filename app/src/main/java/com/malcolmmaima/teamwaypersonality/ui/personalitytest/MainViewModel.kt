@@ -1,6 +1,8 @@
 package com.malcolmmaima.teamwaypersonality.ui.personalitytest
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.malcolmmaima.teamwaypersonality.data.models.PersonalityQuestionsResponse
@@ -22,8 +24,8 @@ class MainViewModel @Inject constructor(
     private val _isLoading = MutableSharedFlow<Boolean>()
     val isLoading = _isLoading.asSharedFlow()
 
-    private val _errorMessage = MutableSharedFlow<String>()
-    val errorMessage = _errorMessage.asSharedFlow()
+    private val _errorMessage = MutableLiveData<String>()
+    val errorMessage: LiveData<String> = _errorMessage
 
     fun fetchPersonalityQuestions() {
             viewModelScope.launch {
@@ -37,7 +39,7 @@ class MainViewModel @Inject constructor(
                         _isLoading.emit(true)
                     }
                     is APIResource.Error -> {
-                        _errorMessage.emit(personalityQuestions.errorBody.toString())
+                        _errorMessage.value = personalityQuestions.errorBody.toString()
                     }
                 }
             }

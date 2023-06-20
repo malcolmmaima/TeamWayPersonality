@@ -1,7 +1,5 @@
 package com.malcolmmaima.teamwaypersonality.ui.personalitytest.adapter
 
-import android.widget.RadioButton
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.malcolmmaima.teamwaypersonality.databinding.CardItemLayoutBinding
 
