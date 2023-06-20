@@ -101,6 +101,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
         // Reset the counts
         introvertCount = 0
         extrovertCount = 0
+        selectedOptions.clear()
 
         binding.imageView.visibility = View.GONE
         binding.placeholderText.visibility = View.GONE
