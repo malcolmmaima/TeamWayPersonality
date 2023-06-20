@@ -1,6 +1,5 @@
 package com.malcolmmaima.teamwaypersonality.ui.personalitytest.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,7 +32,6 @@ class MainViewModel @Inject constructor(
                 when (personalityQuestions) {
                     is APIResource.Success -> {
                         _personalityQuestions.emit(personalityQuestions.value)
-                        Log.d("MainViewModel", "fetchPersonalityQuestions: ${personalityQuestions.value}")
                     }
                     is APIResource.Loading -> {
                         _isLoading.emit(true)
