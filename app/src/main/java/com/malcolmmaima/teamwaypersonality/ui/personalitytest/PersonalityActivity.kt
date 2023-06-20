@@ -71,7 +71,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
             selectedOptions.add(selectedItem)
             binding.cards.postDelayed({
                 binding.cards.swipe()
-            }, 1000)
+            }, 500)
         }
 
         handleCardChanges()
