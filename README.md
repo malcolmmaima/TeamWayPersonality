@@ -49,7 +49,9 @@ The project utilizes the following libraries and dependencies:
 The app allows users to take a personality assessment and receive personalized results. The user interface is designed to provide a smooth and intuitive experience. Users can swipe through a stack of cards, answer questions, and view their personality profile.
 
 # Development
-The project follows modern Android development practices, including the MVVM (Model-View-ViewModel) architecture pattern. Dagger Hilt is used for dependency injection, and Kotlin coroutines are used for asynchronous programming. Retrofit is used for network communication, and GSON is used for JSON serialization/deserialization.
+- The project follows modern Android development practices, including the MVVM (Model-View-ViewModel) architecture pattern. 
+- Dagger Hilt is used for dependency injection, and Kotlin coroutines are used for asynchronous programming.
+- Retrofit is used for network communication, and GSON is used for JSON serialization/deserialization.
 
 # Testing
 ...
