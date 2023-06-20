@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#78909c"
+    android:background="@color/colorPrimary"
     android:padding="20dp"
     android:clipToPadding="false"
     android:clipChildren="false"
@@ -23,7 +23,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:indeterminate="false"
         android:progress="0"
-        android:max="100"/>
+        android:max="100"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/placeholder"
@@ -36,24 +37,27 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:src="@drawable/all_caught_up"
+            android:src="@drawable/introvert"
             android:layout_width="210dp"
             android:layout_height="210dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/imageView"
             app:layout_constraintVertical_bias="0.25"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:text="All Caught Up!"
+            android:id="@+id/placeholderText"
+            android:text="You're an..."
             android:textColor="#ffffff"
+            android:textAlignment="center"
             android:textSize="19sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="4dp"
             android:layout_marginStart="4dp"

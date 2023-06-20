@@ -7,9 +7,11 @@ import com.malcolmmaima.teamwaypersonality.databinding.CardItemLayoutBinding
 
 class CardViewHolder(var view: CardItemLayoutBinding) : RecyclerView.ViewHolder(view.root) {
 
-    var question: AppCompatTextView = view.question
-    var optionA: RadioButton = view.optionA
-    var optionB: RadioButton = view.optionB
-    var optionC: RadioButton = view.optionC
-    var optionD: RadioButton = view.optionD
+    var question = view.question
+    var optionA = view.optionA
+    var optionB = view.optionB
+    var optionC = view.optionC
+    var optionD = view.optionD
+
+    var radioGroup = view.radioGroup
 }

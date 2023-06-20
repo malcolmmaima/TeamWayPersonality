@@ -26,35 +26,32 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.progressBar.visibility = View.VISIBLE
+        binding.proceedBtn.visibility = View.GONE
+        binding.proceedBtn.setOnClickListener {
+            proceedToApp()
+        }
 
         //check network connectivity
         if (!isNetworkAvailable(this)) {
             //show error
             binding.root.snackbar(getString(R.string.no_internet_connection))
-            binding.progressBar.visibility = View.GONE
 
             lifecycleScope.launch {
                 delay(10000)
                 if (!isNetworkAvailable(this@SplashActivity)) {
                     binding.root.snackbar(getString(R.string.no_internet_connection))
                 } else {
-                    proceedToApp()
+                    binding.proceedBtn.visibility = View.VISIBLE
                 }
             }
 
         } else {
-            lifecycleScope.launch {
-                delay(3000)
-                runOnUiThread {
-                    proceedToApp()
-                }
-            }
+            binding.proceedBtn.visibility = View.VISIBLE
         }
     }
 
     private fun proceedToApp() {
-        binding.progressBar.visibility = View.GONE
+        binding.proceedBtn.visibility = View.GONE
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()

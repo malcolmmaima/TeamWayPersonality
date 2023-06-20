@@ -2,25 +2,23 @@ package com.malcolmmaima.teamwaypersonality.ui.personalitytest.adapter
 
 import android.os.Build
 import android.text.Html
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.malcolmmaima.teamwaypersonality.data.models.Option
 import com.malcolmmaima.teamwaypersonality.data.models.Question
 import com.malcolmmaima.teamwaypersonality.databinding.CardItemLayoutBinding
 
 class CardAdapter : RecyclerView.Adapter<CardViewHolder>() {
 
-    var quotes = arrayOf(
-        "Be yourself; everyone else is already taken",
-        "Be the change that you wish to see in the world.",
-        "No one can make you feel inferior without your consent.",
-        "Without music, life would be a mistake.",
-        "We accept the love we think we deserve."
-    )
-    var author = arrayOf("Oscar Wilde", "Mahatma Gandhi", "Eleanor Roosevelt", "Friedrich Nietzsche", "Stephen Chbosky")
+    private var optionClickCallBack: ((Option) -> Unit)? = null
+    private val selectedOptionsMap: MutableMap<Int, Option> = HashMap()
+
+    fun onItemClick(onItemClick: (Option) -> Unit) {
+        this.optionClickCallBack = onItemClick
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, itemType: Int): CardViewHolder {
         val binding = CardItemLayoutBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -55,6 +53,36 @@ class CardAdapter : RecyclerView.Adapter<CardViewHolder>() {
         viewHolder.optionB.text = personalityData.options[1].text
         viewHolder.optionC.text = personalityData.options[2].text
         viewHolder.optionD.text = personalityData.options[3].text
+
+        viewHolder.radioGroup.setOnCheckedChangeListener(null)
+
+        val selectedOption = selectedOptionsMap[position]
+        if (selectedOption != null) {
+            val selectedOptionId = selectedOption.id
+            when (selectedOptionId) {
+                "A" -> viewHolder.optionA.isChecked = true
+                "B" -> viewHolder.optionB.isChecked = true
+                "C" -> viewHolder.optionC.isChecked = true
+                "D" -> viewHolder.optionD.isChecked = true
+            }
+        } else {
+            viewHolder.radioGroup.clearCheck()
+        }
+
+        viewHolder.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            val selectedOption = when (checkedId) {
+                viewHolder.optionA.id -> personalityData.options[0]
+                viewHolder.optionB.id -> personalityData.options[1]
+                viewHolder.optionC.id -> personalityData.options[2]
+                viewHolder.optionD.id -> personalityData.options[3]
+                else -> null
+            }
+
+            if (selectedOption != null) {
+                selectedOptionsMap[position] = selectedOption
+                optionClickCallBack?.invoke(selectedOption)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -66,3 +94,4 @@ class CardAdapter : RecyclerView.Adapter<CardViewHolder>() {
         asyncListDiffer.submitList(personalityQuestions)
     }
 }
+

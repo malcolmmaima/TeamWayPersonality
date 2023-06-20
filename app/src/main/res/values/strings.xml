@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TeamWay Personality</string>
     <string name="no_internet_connection">Please connect to the internet and try again</string>
+    <string name="introvert_text">Introverts are individuals who recharge through solitude, prefer smaller social settings, and thrive in introspection and deep connections. They enjoy quiet activities and possess a strong capacity for empathy and understanding.</string>
+    <string name="extrovert_text">Extroverts are individuals who gain energy from social interactions and external stimuli. They thrive in large gatherings, enjoy being the center of attention, and are often outgoing and enthusiastic. Extroverts tend to be expressive, confident, and enjoy engaging with others to share their thoughts and ideas.</string>
+    <string name="ambivert_text">Ambiverts are adaptable individuals who possess a mix of introverted and extroverted traits. They can enjoy both solitary and social activities, adjusting their behavior as needed. Ambiverts strike a balance between introspection and sociability, effortlessly navigating various social situations.</string>
 </resources>
