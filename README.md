@@ -34,7 +34,7 @@ The project utilizes the following libraries and dependencies:
 - GSON: A library for JSON serialization/deserialization.
 - OkHttp Logging Interceptor: Intercepts and logs HTTP requests and responses.
 - Timber: A logging library for Android.
-- CardStackView: A swipeable card stack view for Android.
+- [CardStackView](https://github.com/yuyakaido/CardStackView): A swipeable card stack view for Android.
 - JUnit: A unit testing framework for Java.
 - MockK: A mocking library for Kotlin.
 - AndroidX Test: Testing support library for Android.
