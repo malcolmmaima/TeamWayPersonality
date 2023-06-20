@@ -192,22 +192,23 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
             binding.imageView.visibility = View.VISIBLE
             binding.placeholderText.visibility = View.VISIBLE
 
-            if(selectedOptions.size == 0) {
+            if(selectedOptions.size <= 4) {
                 binding.imageView.visibility = View.GONE
                 binding.placeholderText.text = getString(R.string.retry_text)
-            }
-            when (personalityType) {
-                "Introvert" -> {
-                    binding.imageView.setImageResource(R.drawable.introvert)
-                    binding.placeholderText.text = getString(R.string.introvert_text)
-                }
-                "Extrovert" -> {
-                    binding.imageView.setImageResource(R.drawable.extrovert)
-                    binding.placeholderText.text = getString(R.string.extrovert_text)
-                }
-                else -> {
-                    binding.imageView.visibility = View.GONE
-                    binding.placeholderText.text = getString(R.string.retry_text)
+            } else {
+                when (personalityType) {
+                    "Introvert" -> {
+                        binding.imageView.setImageResource(R.drawable.introvert)
+                        binding.placeholderText.text = getString(R.string.introvert_text)
+                    }
+                    "Extrovert" -> {
+                        binding.imageView.setImageResource(R.drawable.extrovert)
+                        binding.placeholderText.text = getString(R.string.extrovert_text)
+                    }
+                    else -> {
+                        binding.imageView.visibility = View.GONE
+                        binding.placeholderText.text = getString(R.string.retry_text)
+                    }
                 }
             }
         }

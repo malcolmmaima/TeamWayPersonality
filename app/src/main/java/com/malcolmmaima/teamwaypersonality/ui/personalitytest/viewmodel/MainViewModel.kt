@@ -37,7 +37,7 @@ class MainViewModel @Inject constructor(
                         _isLoading.emit(true)
                     }
                     is APIResource.Error -> {
-                        _errorMessage.value = personalityQuestions.errorBody.toString()
+                        _errorMessage.value = personalityQuestions.errorBody?.string()
                     }
                 }
             }
