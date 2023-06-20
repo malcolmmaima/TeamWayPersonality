@@ -21,3 +21,7 @@ fun View.snackbar(message: String, action: (() -> Unit)? = null) {
     }
     snackbar.show()
 }
+
+fun calculatePercentage(current: Int, length: Int): Int {
+    return ((current + 1) * 100) / (length + 1)
+}

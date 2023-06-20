@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:background="#78909c"
+    android:padding="20dp"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    android:id="@+id/container"
+    tools:context=".ui.personalitytest.MainActivity">
+
+    <ProgressBar
+        android:theme="@style/Theme.TeamWayPersonality"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminate="false"
+        android:progress="0"
+        android:max="100"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:src="@drawable/all_caught_up"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/imageView"
+            app:layout_constraintVertical_bias="0.25"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="All Caught Up!"
+            android:textColor="#ffffff"
+            android:textSize="19sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.yuyakaido.android.cardstackview.CardStackView
+        android:id="@+id/cards"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.40"/>
+
+    <ImageButton
+        android:id="@+id/previousCard"
+        android:src="@drawable/ic_previous_button"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="8dp"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/restack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.TeamWayPersonality"
+        android:src="@drawable/ic_action_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

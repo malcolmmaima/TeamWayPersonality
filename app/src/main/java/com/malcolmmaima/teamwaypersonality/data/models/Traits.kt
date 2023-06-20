@@ -6,6 +6,10 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Keep
-data class PersonalityQuestionsResponse(
-    val questions: List<Question>
+data class Traits(
+    val agreeableness: Double,
+    val conscientiousness: Double,
+    val extraversion: Double,
+    val neuroticism: Double,
+    val openness: Double
 ) : Parcelable
