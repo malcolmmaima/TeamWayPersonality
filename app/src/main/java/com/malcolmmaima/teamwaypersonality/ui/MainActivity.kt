@@ -1,4 +1,4 @@
-package com.malcolmmaima.teamwaypersonality
+package com.malcolmmaima.teamwaypersonality.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

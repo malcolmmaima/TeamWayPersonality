@@ -1,8 +1,6 @@
 package com.malcolmmaima.teamwaypersonality.di
 
-import com.malcolmmaima.teamwaypersonality.data.datastore.AppDatasource
-import com.malcolmmaima.teamwaypersonality.data.repository.AppRepositoryImpl
-import com.malcolmmaima.teamwaypersonality.domain.repository.AppRepository
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +13,5 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAppRepository(
-        userPrefs: AppDatasource
-    ): AppRepository = AppRepositoryImpl(userPrefs)
+    fun providesGson(): Gson = Gson()
 }
