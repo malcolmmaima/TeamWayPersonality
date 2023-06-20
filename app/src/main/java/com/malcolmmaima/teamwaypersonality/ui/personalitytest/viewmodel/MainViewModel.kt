@@ -1,4 +1,4 @@
-package com.malcolmmaima.teamwaypersonality.ui.personalitytest
+package com.malcolmmaima.teamwaypersonality.ui.personalitytest.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

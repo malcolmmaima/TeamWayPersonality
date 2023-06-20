@@ -10,7 +10,7 @@
     android:clipToPadding="false"
     android:clipChildren="false"
     android:id="@+id/container"
-    tools:context=".ui.personalitytest.MainActivity">
+    tools:context=".ui.personalitytest.PersonalityActivity">
 
     <ProgressBar
         android:theme="@style/Theme.TeamWayPersonality"

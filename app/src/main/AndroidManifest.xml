@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.personalitytest.MainActivity"
+            android:name=".ui.personalitytest.PersonalityActivity"
             android:exported="false" />
     </application>
 

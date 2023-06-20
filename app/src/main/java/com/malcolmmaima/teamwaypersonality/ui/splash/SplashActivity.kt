@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.malcolmmaima.teamwaypersonality.R
 import com.malcolmmaima.teamwaypersonality.databinding.ActivitySplashBinding
-import com.malcolmmaima.teamwaypersonality.ui.personalitytest.MainActivity
+import com.malcolmmaima.teamwaypersonality.ui.personalitytest.PersonalityActivity
 import com.malcolmmaima.teamwaypersonality.utils.isNetworkAvailable
 import com.malcolmmaima.teamwaypersonality.utils.snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -52,7 +52,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun proceedToApp() {
         binding.proceedBtn.visibility = View.GONE
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, PersonalityActivity::class.java)
         startActivity(intent)
         finish()
     }

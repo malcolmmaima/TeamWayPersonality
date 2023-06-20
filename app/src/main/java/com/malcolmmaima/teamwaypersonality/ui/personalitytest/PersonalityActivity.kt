@@ -13,6 +13,7 @@ import com.malcolmmaima.teamwaypersonality.data.models.Option
 import com.malcolmmaima.teamwaypersonality.data.models.Question
 import com.malcolmmaima.teamwaypersonality.databinding.ActivityMainBinding
 import com.malcolmmaima.teamwaypersonality.ui.personalitytest.adapter.CardAdapter
+import com.malcolmmaima.teamwaypersonality.ui.personalitytest.viewmodel.MainViewModel
 import com.malcolmmaima.teamwaypersonality.utils.OnSwipeTouchListener
 import com.malcolmmaima.teamwaypersonality.utils.calculatePercentage
 import com.malcolmmaima.teamwaypersonality.utils.snackbar
@@ -26,7 +27,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), CardStackListener {
+class PersonalityActivity : AppCompatActivity(), CardStackListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var layoutManager: CardStackLayoutManager
@@ -68,7 +69,9 @@ class MainActivity : AppCompatActivity(), CardStackListener {
 
         cardAdapter.onItemClick { selectedItem ->
             selectedOptions.add(selectedItem)
-            binding.cards.swipe()
+            binding.cards.postDelayed({
+                binding.cards.swipe()
+            }, 1000)
         }
 
         handleCardChanges()
@@ -91,7 +94,7 @@ class MainActivity : AppCompatActivity(), CardStackListener {
             binding.cards.rewind()
         }
 
-        binding.container.setOnTouchListener(object : OnSwipeTouchListener(this@MainActivity) {
+        binding.container.setOnTouchListener(object : OnSwipeTouchListener(this@PersonalityActivity) {
             override fun onSwipeDown() {
                 binding.cards.rewind()
             }
