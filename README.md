@@ -34,22 +34,25 @@ The project utilizes the following libraries and dependencies:
 - GSON: A library for JSON serialization/deserialization.
 - OkHttp Logging Interceptor: Intercepts and logs HTTP requests and responses.
 - Timber: A logging library for Android.
-- CardStackView: A swipeable card stack view for Android.
+- [CardStackView](https://github.com/yuyakaido/CardStackView): A swipeable card stack view for Android.
 - JUnit: A unit testing framework for Java.
 - MockK: A mocking library for Kotlin.
 - AndroidX Test: Testing support library for Android.
 - Espresso: A testing framework for UI testing on Android.
 
 # General Preview
-<a href="url"><img src=https://github.com/malcolmmaima/TeamWayPersonality/assets/3639153/b9488efd-3af1-400a-a92c-27ab4ecfe192 height="550"  ></a>
-<a href="url"><img src=https://github.com/malcolmmaima/TeamWayPersonality/assets/3639153/32b75d02-fe09-4cdc-8bce-bb88fea700a7 height="550"  ></a>
-<a href="url"><img src=https://github.com/malcolmmaima/TeamWayPersonality/assets/3639153/d0f55d5e-f550-4f25-bfd0-f35b56f22bb1 height="550"  ></a>
+<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218708-a3ecde25-9809-4446-a991-bdc4c569377c.jpg height="550"  ></a>
+<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218701-459c1bf5-fdc2-47e3-a0d0-c8b46465825b.jpg height="550"  ></a>
+<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218689-7b845334-ed38-46ca-b49f-ed732a821432.jpg height="550"  ></a>
 
 # Usage
 The app allows users to take a personality assessment and receive personalized results. The user interface is designed to provide a smooth and intuitive experience. Users can swipe through a stack of cards, answer questions, and view their personality profile.
+The app uses a mock backend found here: https://malcolmmaima.com/personality/questions.json
 
 # Development
-The project follows modern Android development practices, including the MVVM (Model-View-ViewModel) architecture pattern. Dagger Hilt is used for dependency injection, and Kotlin coroutines are used for asynchronous programming. Retrofit is used for network communication, and GSON is used for JSON serialization/deserialization.
+- The project follows modern Android development practices, including the MVVM (Model-View-ViewModel) architecture pattern. 
+- Dagger Hilt is used for dependency injection, and Kotlin coroutines are used for asynchronous programming.
+- Retrofit is used for network communication, and GSON is used for JSON serialization/deserialization.
 
 # Testing
 ...
