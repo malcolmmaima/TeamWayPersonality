@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import okhttp3.ResponseBody
+import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -85,7 +86,10 @@ class MainViewModelTest {
     @Test
     fun `fetchPersonalityQuestions emits network error result`() = runTest {
         // Mock APIResource.Error response
-        val expectedResponse = APIResource.Error(true, errorCode = 500, errorBody = ResponseBody.create(null, "Error Message"))
+        val expectedResponse = APIResource.Error(true, errorCode = 500, errorBody = "Error Message".toResponseBody(
+            null
+        )
+        )
 
         coEvery { appRepository.getPersonalityQuestions() } returns expectedResponse
 

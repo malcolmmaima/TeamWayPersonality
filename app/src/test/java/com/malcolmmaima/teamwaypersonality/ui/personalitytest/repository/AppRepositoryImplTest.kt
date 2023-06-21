@@ -11,6 +11,7 @@ import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import okhttp3.ResponseBody
+import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -46,7 +47,7 @@ class AppRepositoryImplTest {
         val errorCode = 404
         val errorResponse = Response.error<PersonalityQuestionsResponse>(
             errorCode,
-            ResponseBody.create(null, "")
+            "".toResponseBody(null)
         )
         coEvery { malcolmApi.getPersonalityQuestions() } throws HttpException(errorResponse)
 
