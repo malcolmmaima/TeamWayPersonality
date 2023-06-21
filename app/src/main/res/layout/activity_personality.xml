@@ -13,7 +13,6 @@
     tools:context=".ui.personalitytest.PersonalityActivity">
 
     <ProgressBar
-        android:theme="@style/Theme.TeamWayPersonality"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:id="@+id/progressBar"
         android:layout_width="0dp"
@@ -83,6 +82,7 @@
         style="?attr/borderlessButtonStyle"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:visibility="invisible"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="8dp"
@@ -94,7 +94,6 @@
         android:id="@+id/restack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.TeamWayPersonality"
         android:src="@drawable/ic_action_name"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"

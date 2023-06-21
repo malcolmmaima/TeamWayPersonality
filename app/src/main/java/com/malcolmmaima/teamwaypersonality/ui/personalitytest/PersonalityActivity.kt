@@ -11,7 +11,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.malcolmmaima.teamwaypersonality.R
 import com.malcolmmaima.teamwaypersonality.data.models.Option
 import com.malcolmmaima.teamwaypersonality.data.models.Question
-import com.malcolmmaima.teamwaypersonality.databinding.ActivityMainBinding
+import com.malcolmmaima.teamwaypersonality.databinding.ActivityPersonalityBinding
 import com.malcolmmaima.teamwaypersonality.ui.personalitytest.adapter.CardAdapter
 import com.malcolmmaima.teamwaypersonality.ui.personalitytest.viewmodel.MainViewModel
 import com.malcolmmaima.teamwaypersonality.utils.OnSwipeTouchListener
@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class PersonalityActivity : AppCompatActivity(), CardStackListener {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityPersonalityBinding
     private lateinit var layoutManager: CardStackLayoutManager
     private val viewModel: MainViewModel by viewModels()
     private lateinit var cardAdapter: CardAdapter
@@ -41,7 +41,7 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPersonalityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fetchPersonalityQuestions()
     }
@@ -89,12 +89,6 @@ class PersonalityActivity : AppCompatActivity(), CardStackListener {
         binding.previousCard.setOnClickListener {
             binding.cards.rewind()
         }
-
-        binding.container.setOnTouchListener(object : OnSwipeTouchListener(this@PersonalityActivity) {
-            override fun onSwipeDown() {
-                fetchPersonalityQuestions()
-            }
-        })
     }
 
     private fun fetchPersonalityQuestions() {

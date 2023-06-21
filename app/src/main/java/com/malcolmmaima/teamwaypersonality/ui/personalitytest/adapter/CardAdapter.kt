@@ -43,11 +43,8 @@ class CardAdapter : RecyclerView.Adapter<CardViewHolder>() {
 
     override fun onBindViewHolder(viewHolder: CardViewHolder, position: Int) {
         val personalityData = asyncListDiffer.currentList[position]
-        val tempText = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        val tempText =
             Html.fromHtml("&quot;${personalityData.question}&quot;", Html.FROM_HTML_MODE_LEGACY).toString()
-        } else {
-            Html.fromHtml("&quot;${personalityData.question}&quot;").toString()
-        }
         viewHolder.question.text = tempText
         viewHolder.optionA.text = personalityData.options[0].text
         viewHolder.optionB.text = personalityData.options[1].text
