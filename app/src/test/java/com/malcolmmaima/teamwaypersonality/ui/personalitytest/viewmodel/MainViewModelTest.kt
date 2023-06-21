@@ -12,8 +12,10 @@ import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.unmockkAll
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import okhttp3.ResponseBody
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -77,5 +79,21 @@ class MainViewModelTest {
 
         // Assert that the actual response is equal to the expected response
         assert(APIResource.Success(actualResponse.first()).value == expectedResponse.value)
+    }
+
+    // test fetch personality throws error
+    @Test
+    fun `fetchPersonalityQuestions emits network error result`() = runTest {
+        // Mock APIResource.Error response
+        val expectedResponse = APIResource.Error(true, errorCode = 500, errorBody = ResponseBody.create(null, "Error Message"))
+
+        coEvery { appRepository.getPersonalityQuestions() } returns expectedResponse
+
+        viewModel.fetchPersonalityQuestions()
+
+        // Collect the emitted value from live data and assert that error message is equal to the expected error message
+        viewModel.errorMessage.observeForever {
+            assert(it == "Error Message")
+        }
     }
 }

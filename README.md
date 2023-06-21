@@ -55,7 +55,11 @@ The app uses a mock backend found here: https://malcolmmaima.com/personality/que
 - Retrofit is used for network communication, and GSON is used for JSON serialization/deserialization.
 
 # Testing
-...
+The project includes unit tests to ensure the correctness and stability of the application. JUnit and MockK are used for unit testing.
+
+To run the tests, use the following commands:
+
+- For unit tests: ./gradlew testDebugUnitTest
 
 # License
 The project is licensed under the MIT License.
