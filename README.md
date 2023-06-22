@@ -1,6 +1,12 @@
 # Personality Test App
 This Android project is developed to provide a personality assessment app. It utilizes various libraries and frameworks to enhance functionality and user experience.
 
+# General Preview
+<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218708-a3ecde25-9809-4446-a991-bdc4c569377c.jpg height="550"  ></a>
+<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218701-459c1bf5-fdc2-47e3-a0d0-c8b46465825b.jpg height="550"  ></a>
+<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218689-7b845334-ed38-46ca-b49f-ed732a821432.jpg height="550"  ></a>
+
+
 # Installation
 To run the project locally, follow these steps:
 
@@ -39,11 +45,6 @@ The project utilizes the following libraries and dependencies:
 - MockK: A mocking library for Kotlin.
 - AndroidX Test: Testing support library for Android.
 - Espresso: A testing framework for UI testing on Android.
-
-# General Preview
-<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218708-a3ecde25-9809-4446-a991-bdc4c569377c.jpg height="550"  ></a>
-<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218701-459c1bf5-fdc2-47e3-a0d0-c8b46465825b.jpg height="550"  ></a>
-<a href="url"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/3639153/247218689-7b845334-ed38-46ca-b49f-ed732a821432.jpg height="550"  ></a>
 
 # Usage
 The app allows users to take a personality assessment and receive personalized results. The user interface is designed to provide a smooth and intuitive experience. Users can swipe through a stack of cards, answer questions, and view their personality profile.
